@@ -96,7 +96,7 @@ const products = [
 const Contactitem = () => {
 
 	return (
-		<div className={'shop-contact '}>
+		<div className={'shop-contact'}>
 			<div className={'shop-duct'}>
 				<Row>
 					{
