@@ -4,8 +4,8 @@ import {SnippetsOutlined,PhoneOutlined,InstagramOutlined} from '@ant-design/icon
 import { Form, Input, Button } from 'antd';
 const Location = () => {
 	const layout = {
-		labelCol: { span: 4 },
-		wrapperCol: { span: 20 },
+		labelCol: { span: 8},
+		wrapperCol: { span: 16 },
 	};
 	const validateMessages = {
 		required: '${label} is required!',
@@ -65,6 +65,47 @@ const Location = () => {
 						</Form>
 					</Col>
 				</Row>
+			</div>
+			<div className={'form-us'}>
+				<div className={'about-us'}>
+					<h3>Liên hệ chúng tôi</h3>
+					<p>Claritas est etiam processus dynamicus, qui sequitur
+						mutationem consuetudium lectorum. Mirum est notare
+						quam littera gothica, quam nunc putamus parum claram
+						anteposuerit litterarum formas human. qui sequitur
+						mutationem consuetudium lectorum.
+						Mirum est notare quam
+					</p>
+					<ul>
+						<li><SnippetsOutlined/><span>  Address : Your address goes here.</span></li>
+						<li><PhoneOutlined /><span>   0123456789</span></li>
+						<li><InstagramOutlined /><span>  demo@example.com</span></li>
+
+					</ul>
+				</div>
+				<div className={'form-about'}>
+					<h3>Cho chúng tôi biết dự án của bạn</h3>
+					<Form  name="nest-messages"  validateMessages={validateMessages}>
+						<Form.Item name={['user', 'name']} label="Name" rules={[{ required: true }]}>
+							<Input />
+						</Form.Item>
+						<Form.Item name={['user', 'email']} label="Email" rules={[{ type: 'email' }]}>
+							<Input />
+						</Form.Item>
+						<Form.Item name={['user', 'Subject']} label="Subject">
+							<Input />
+						</Form.Item>
+						<Form.Item name={['user', 'Your Message']} label="Your Message">
+							<Input.TextArea />
+						</Form.Item>
+						<Form.Item wrapperCol={{ ...layout.wrapperCol }}>
+							<Button type="primary" htmlType="submit" className={'btn-form'}>
+								Submit
+							</Button>
+						</Form.Item>
+					</Form>
+				</div>
+
 			</div>
 		</div>
 	);

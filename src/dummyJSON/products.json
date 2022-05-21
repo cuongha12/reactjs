@@ -1,0 +1,18 @@
+{
+  "products" :
+  [
+	{"id": 1, "name": "Laptop Asus", "price" : 2.50},
+	{"id": 2, "name": "Laptop Dell", "price" : 22221},
+	{"id": 3, "name": "Máy bay", "price" : 8888},
+	{"id": 4, "name": "Kem", "price" : 222311},
+	{"id": 5, "name": "Điện thoại", "price" : 77777},
+	{"id": 6, "name": "Laptop A", "price" : 10000},
+	{"id": 7, "name": "Laptop B", "price" : 877676},
+	{"id": 8, "name": "Laptop C", "price" : 28819},
+	{"id": 9, "name": "Laptop D", "price" : 2.50},
+	{"id": 10, "name": "Laptop E", "price" : 2.50},
+	{"id": 11, "name": "Laptop F", "price" : 21213},
+	{"id": 12, "name": "Laptop G", "price" : 20000},
+	{"id": 13, "name": "Laptop S", "price" : 30000}
+  ]
+}

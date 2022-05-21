@@ -201,7 +201,7 @@ const Shopitem = [
 				<Contactitem/>
 				<Pagination defaultCurrent={1} total={50} className={'text nones '}/>
 				<div className="site-card-border-less-wrapper">
-					<Card title="DANH MỤC SẢN PHẨM" bordered={false} style={{ width: 700 }}>
+					<Card title="DANH MỤC SẢN PHẨM" bordered={false} >
 						<ul className={'price-shop'}>
 							<li><a href={'/#'}>Máy ảnh & Máy quay phim</a></li>
 							<li><a href={'/#'}>Mạng máy tính</a></li>
@@ -214,7 +214,7 @@ const Shopitem = [
 					</Card>
 				</div>
 				<div className="site-card-border-less-wrapper ">
-					<Card title="BỘ LỌC THEO GIÁ" bordered={false} style={{ width: 700 }} className={'filter'}>
+					<Card title="BỘ LỌC THEO GIÁ" bordered={false}  className={'filter'}>
 						<Slider range={{ draggableTrack: true }} defaultValue={[20, 50]} />
 						<button className={'submit'}>Lọc</button>
 					</Card>
@@ -251,7 +251,7 @@ const Shopitem = [
 					</div>
 				</div>
 				<div className="site-card-border-less-wrapper">
-					<Card title="THẺ SẢN PHẨM" bordered={false} style={{ width: 700 }} >
+					<Card title="THẺ SẢN PHẨM" bordered={false}  >
 						<div className={'shop-card'}>
 							<button className={'btn-p'}>Áo cánh</button>
 							<button className={'btn-p'}>Quần áo</button>

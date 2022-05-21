@@ -8,7 +8,7 @@ const LaptopHome = () => {
 				<Col span={6} className={'block'} lg={6} xs={24} md={12}>
 					<Card
 						hoverable
-						style={{ width: 320  }}
+
 						cover={<img alt="example" src="https://htmldemo.net/rusu/rusu/assets/img/custom-p/product1.jpg" />}
 					>
 						<h4><a href="/#" className={'electronic'}>Máy tính &amp; Máy tính xách tay</a></h4>
@@ -23,7 +23,7 @@ const LaptopHome = () => {
 				<Col span={6} className={'block'} lg={6} xs={24} md={12}>
 					<Card
 						hoverable
-						style={{ width: 320  }}
+
 						cover={<img alt="example" src="https://htmldemo.net/rusu/rusu/assets/img/custom-p/product2.jpg" />}
 					>
 						<h4><a href="/$#" className={'electronic'}>Điện thoại thông minh &amp; Máy tính bảng</a></h4>
@@ -38,7 +38,7 @@ const LaptopHome = () => {
 				<Col span={6} className={'block'} lg={6} xs={24} md={12}>
 					<Card
 						hoverable
-						style={{ width:320  }}
+
 						cover={<img alt="example" src="https://htmldemo.net/rusu/rusu/assets/img/custom-p/product3.jpg" />}
 					>
 						<h4><a href="/#" className={'electronic'}>Trình điều khiển game</a></h4>
@@ -53,7 +53,7 @@ const LaptopHome = () => {
 				<Col span={6} className={'block'} lg={6} xs={24} md={12}>
 					<Card
 						hoverable
-						style={{ width: 320 }}
+
 						cover={<img alt="example" src="https://htmldemo.net/rusu/rusu/assets/img/custom-p/product4.jpg" />}
 					>
 						<h4><a href="/#" className={'electronic'}>Trò chơi &amp; Đồ chơi Video</a></h4>

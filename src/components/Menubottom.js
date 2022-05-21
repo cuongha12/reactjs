@@ -1,20 +1,16 @@
 import React from 'react';
 import { Row, Col } from 'antd';
-import '../css/logo.css'
 import path from "../contants/path";
 import CsLink from "./CsLink";
+import '../css/home.css'
 import images from "../contants/images/images";
-import {MenuOutlined} from "@ant-design/icons";
 
-const MenuHeader = ({
-	onMenuClick = () => {}
-}) => {
-
+const Menubottom = () => {
 	return (
-		<Row justify={'space-between'} align={'middle'} className={'container sticky-header'}>
+		<Row justify={'space-between'} align={'middle'} className={'container header_middle'}>
 			<Col span={6}>
 				<div className={'card'}>
-					<a href={'/#'}><img src={images.logo} alt={'logo'}/></a>
+					<img src={images.logo} alt={'logo'}/>
 				</div>
 			</Col>
 			<Col span={18}>
@@ -24,9 +20,10 @@ const MenuHeader = ({
 					<li><CsLink to={path.BLOG}>Blog</CsLink></li>
 					<li><CsLink to={path.CONTACT}>Liên hệ</CsLink></li>
 				</ul>
-				<button onClick={onMenuClick} className={'logo-icon'}><MenuOutlined /></button>
+
 			</Col>
 		</Row>
 	);
 };
-export default MenuHeader;
+
+export default Menubottom;

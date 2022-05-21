@@ -3,6 +3,8 @@ const path = {
 	BLOG: '/blog',
 	SHOP: '/shop',
 	CONTACT: '/contact',
+	PRODUCT: '/product/',
+	DETAIL : '/product/:id',
 }
 
 export default path

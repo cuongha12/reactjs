@@ -74,6 +74,36 @@ const Contacthome = () => {
 		},
 
 	]
+	const settings = {
+		slidesToShow: 4,
+		draggable: true,
+		responsive: [
+			{
+				breakpoint: 1024,
+				settings: {
+					slidesToShow: 4,
+					slidesToScroll: 3,
+					infinite: true,
+					dots: true
+				}
+			},
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 3,
+					slidesToScroll: 2,
+					initialSlide: 2
+				}
+			},
+			{
+				breakpoint: 480,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1
+				}
+			}
+		]
+	}
 	return (
 		<div>
 
@@ -85,10 +115,10 @@ const Contacthome = () => {
 					<Col span={12} className={'loading'} >
 						<div className={'menu-bottom'}>
 							<ul>
-								<a><li>Video</li></a>
-								<a><li>Xem</li></a>
-								<a><li>Máy tính bảng</li></a>
-								<a><li>Trò chơi</li></a>
+								<a href={'/#'}><li>Video</li></a>
+								<a href={'/#'}><li>Xem</li></a>
+								<a href={'/#'}><li>Máy tính bảng</li></a>
+								<a href={'/#'}><li>Trò chơi</li></a>
 
 							</ul>
 						</div>
@@ -106,7 +136,7 @@ const Contacthome = () => {
 				</Row>
 			</div>
 		<div className={'device col'}>
-			<Carousel ref={carouselRe} slidesToShow={4}  className={'caro'} draggable={true}>
+			<Carousel ref={carouselRe} slidesToShow={4}  className={'caro'} draggable={true} {...settings} >
 				{contacthome.map((it)=>(
 					<Card
 						key={it.key}
@@ -141,7 +171,7 @@ const Contacthome = () => {
 							<Card
 
 								hoverable
-								style={{ width: 320 }}
+
 								cover={
 									<div>
 										<a href={'/#'}>{icon.name}</a>

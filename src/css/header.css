@@ -45,7 +45,23 @@ span{
     animation-duration: 0.5s;
     animation-name: fadeInLeft;
 }
-
+.ant-row .ant-col .language .ant-space .ant-space-item .anticon svg{
+    font-size: 12px;
+}
+.ant-row .ant-col .language .ant-space{
+    cursor: pointer;
+}
+.ant-row .ant-col .support span{
+    cursor: pointer;
+    padding-left: 14px;
+    padding-right: 10px;
+}
+.ant-row .ant-col .support .ant-space .ant-space-item .anticon svg{
+    font-size: 12px;
+}
+.ant-row .ant-col .support .ant-space {
+    cursor: pointer;
+}
 @media only  screen and (max-width: 768px){
 
     .menu-home{
@@ -256,4 +272,23 @@ span{
 
 
 }
-
+@media only screen and (max-width: 768px){
+    .Strong{
+        display: none;
+    }
+}
+@media only screen and (max-width: 425px){
+    .Strong{
+        display: none;
+    }
+}
+@media only screen and (max-width: 375px){
+    .Strong{
+        display: none;
+    }
+}
+@media only screen and (max-width: 320px){
+    .Strong{
+        display: none;
+    }
+}

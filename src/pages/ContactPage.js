@@ -6,8 +6,8 @@ const ContactPage = () => {
 		<div>
 			<div className={'content'}>
 				<ul>
-					<li><a href={'#'}>Trang chủ</a></li>
-					<li>Cửa hàng</li>
+					<li><a href={'/#'}>Trang chủ</a></li>
+					<li>Liên hệ chúng tôi</li>
 				</ul>
 			</div>
 			<div className={'Container-us'}>

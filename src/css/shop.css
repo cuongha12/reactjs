@@ -21,10 +21,9 @@
     border-top: 1px solid #ebebeb;
     padding: 13px 0;
 }
-.site-card-border-less-wrapper {
+.nones .site-card-border-less-wrapper {
     margin-bottom: 50px;
     border: 1px solid #ebebeb;
-
 }
 .site-card-border-less-wrapper .ant-card .ant-card-body{
     padding: 0 !important;
@@ -44,6 +43,9 @@
     margin: 0;
     font-family: inherit;
     font-size: inherit;
+}
+.menu-shop .ant-row .ant-col .site-card-border-less-wrapper{
+    border: 1px solid #ebebeb;
 }
 .site-card-border-less-wrapper .filter{
     padding: 20px !important;
@@ -139,7 +141,9 @@
 .nones{
     display: none;
 }
-
+.menu-shop .ant-row .ant-col .site-card-border-less-wrapper{
+    margin-bottom: 20px;
+}
 @media only screen and (max-width: 768px){
 
 
@@ -158,12 +162,11 @@
     .nones{
         display: block;
     }
-    .site-card-border-less-wrapper {
+    .nones .site-card-border-less-wrapper {
         margin-bottom: 50px;
         border: 1px solid #ebebeb;
         margin-top: 20px;
         width: 712px;
-
         margin-left: 30px;
     }
     .center{
@@ -171,6 +174,9 @@
         margin-left: auto;
         margin-right: auto;
 
+    }
+    div .baneershop img{
+        margin-top: 20px;
     }
 
 }
@@ -188,5 +194,56 @@
     .shop-contact .shop-duct .ant-row .ant-col .ant-card{
         width: 386px !important;
     }
+    .nones .site-card-border-less-wrapper .ant-card{
+        width: 380px ;
+    }
+    .nones .site-card-border-less-wrapper {
+        width: 400px ;
+        margin: 15px;
+    }
+    .baneershop{
+        padding: 0 15px !important;
+    }
+    .baneershop img{
+        width: 100% !important;
+        padding-left: 0;
+    }
+    div .baneershop img{
+        margin-top: 20px;
+    }
+}
+@media only screen and (width: 375px){
+    .nones .site-card-border-less-wrapper{
+        width: 345px;
 
+    }
+    .nones .site-card-border-less-wrapper .ant-card {
+        width: 340px !important;
+    }
+    div .baneershop img{
+        margin-top: 20px;
+    }
+}
+@media only screen and (width: 320px){
+    .nones .site-card-border-less-wrapper{
+        width: 300px;
+        margin: 12px;
+    }
+    .nones .site-card-border-less-wrapper .ant-card{
+        width: 270px;
+    }
+    .nones .widget_list  .banner_thumb  a img{
+        width: 300px;
+    }
+    .shop_toolbar_wrapper {
+        margin: 5px 23px 18px;
+    }
+    div .baneershop img{
+        margin-top: 20px;
+    }
+}
+@media only screen and (max-width: 1024px){
+    .menu-shop .ant-row .ant-col .site-card-border-less-wrapper .ant-card{
+        width: 222px;
+    }
 }
