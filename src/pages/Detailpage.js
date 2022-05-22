@@ -68,7 +68,7 @@ const setting = {
 			}
 		},
 		{
-			breakpoint: 600,
+			breakpoint: 768,
 			settings: {
 				slidesToShow: 2,
 				slidesToScroll: 2,
@@ -397,8 +397,8 @@ const Detailpage = () => {
 						</div>
 						<Form
 							name="basic"
-							labelCol={{ span: 2 }}
-							wrapperCol={{ span: 22 }}
+							labelCol={{ span: 4 }}
+							wrapperCol={{ span: 20 }}
 							initialValues={{ remember: true }}
 							onFinish={onFinish}
 							onFinishFailed={onFinishFailed}
@@ -422,7 +422,7 @@ const Detailpage = () => {
 
 
 
-							<Form.Item wrapperCol={{ offset: 2, span: 22 }}>
+							<Form.Item wrapperCol={{ offset: 4, span: 20 }}>
 								<Button type="primary" htmlType="submit">
 									Submit
 								</Button>
@@ -430,7 +430,7 @@ const Detailpage = () => {
 						</Form>
 					</TabPane>
 				</Tabs>
-				<div className={'wrapper'}>
+				<div className={'wrapper detail-w'}>
 					<div className={'title home-title'}>
 						<Row>
 							<Col span={8}>
@@ -484,7 +484,7 @@ const Detailpage = () => {
 
 					</div>
 				</div>
-				<div className={'wrapper'}>
+				<div className={'wrapper detail-w'}>
 					<div className={'title home-title'}>
 						<Row>
 							<Col span={8}>
