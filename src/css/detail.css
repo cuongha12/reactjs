@@ -529,3 +529,17 @@
         margin-right: 22px;
     }
 }
+@media only screen and (max-width: 320px){
+    .product-details-tab .zoomWrapper {
+        width: 278px;
+        height: 432px;
+    }
+    .product-details-tab .zoomWrapper a img {
+        width: 271px;
+    }
+    .single-zoom-thumb .ant-carousel {
+        margin-top: 30px;
+        margin-left: 10px;
+        margin-right: 22px;
+    }
+}
