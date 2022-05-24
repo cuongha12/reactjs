@@ -21,14 +21,14 @@ const { TabPane } = Tabs;
 const settings = {
 	slidesToShow: 4,
 	draggable: true,
+	infinite: true,
+	dots: true,
 	responsive: [
 		{
 			breakpoint: 1024,
 			settings: {
 				slidesToShow: 3,
-				slidesToScroll: 3,
-				infinite: true,
-				dots: true
+				slidesToScroll: 3
 			}
 		},
 		{
@@ -241,7 +241,7 @@ const Detailpage = () => {
 		<div className={'product_details'}>
 			<div className={'detail-container'}>
 				<Row>
-					<Col span={'12'}>
+					<Col  sm={24}>
 						<div className={'product-details-tab'}>
 							<div className={'zoomWrapper single-zoom'}>
 								<a >
@@ -263,15 +263,15 @@ const Detailpage = () => {
 												}))
 											}}
 											key={index}
-											  hoverable
-											  cover={<img alt={"ex" + index} src={el.src} />}
+											hoverable
+											cover={<img alt={"ex" + index} src={el.src} />}
 										/>
 									))
 								}
 							</Carousel>
 						</div>
 					</Col>
-					<Col span={'12'} >
+					<Col md={24} >
 						<div className={'detail-col'}>
 							<h3>
 								<a href={'/#'}>{product?.name}</a>
@@ -317,229 +317,229 @@ const Detailpage = () => {
 						</div>
 					</Col>
 				</Row>
-				<Tabs defaultActiveKey="1" onChange={callback}>
-					<TabPane tab="Miêu tả" key="1">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper.
-							Nulla tellus mi,
-							vulputate adipiscing cursus eu, suscipit id nulla.
-						</p>
-						<p>Pellentesque aliquet, sem eget laoreet ultrices, ipsum metus feugiat sem, quis fermentum turpis eros eget velit. Donec ac tempus ante. Fusce ultricies massa massa. Fusce aliquam, purus eget sagittis vulputate, sapien libero hendrerit est, sed commodo augue nisi non neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Sed tempor, lorem et placerat vestibulum, metus nisi posuere nisl, in accumsan elit odio quis mi.
-							Cras neque metus, consequat et blandit et, luctus a nunc.
-							gravida vehicula tellus, in imperdiet ligula euismod eget.</p>
-					</TabPane>
-					<TabPane tab="Chỉ rõ" key="2">
-						<div className="product_d_table">
-							<form action="#">
-								<table >
-									<tbody>
-									<tr>
-										<td className="first_child">Sáng tác</td>
-										<td>Polyester</td>
-									</tr>
-									<tr>
-										<td className="first_child">Phong cách</td>
-										<td>Nữ tính</td>
-									</tr>
-									<tr>
-										<td className="first_child">Tính chất</td>
-										<td>Váy ngắn</td>
-									</tr>
-									</tbody>
-								</table>
-							</form>
-						</div>
-						<p>Fashion has been creating well-designed collections since 2010.
-							The brand offers feminine designs delivering stylish separates and statement dresses which have since evolved into a full ready-to-wear collection in which every item is a vital part of a woman's wardrobe.
-							The result? Cool, easy, chic looks with youthful elegance and unmistakable signature style. All the beautiful pieces are made in Italy and manufactured with the greatest attention.
-							Now Fashion extends to a range of accessories including shoes, hats, belts and more!</p>
-					</TabPane>
-					<TabPane tab="Tab 3" key="3">
-						<div>
-							<h2>1 Review for Donec eu furniture</h2>
-							<div className={'reviews_comment_box'}>
-								<div className="comment_thmb">
-									<img src="https://htmldemo.net/rusu/rusu/assets/img/blog/comment2.jpg" alt=""/>
-								</div>
-								<div className="comment_text">
-									<div className="reviews_meta">
-										<div className="product_rating">
-											<Rate />
-										</div>
-										<p><strong>ADMIN </strong>- ngày 12 tháng 9 năm 2018</p>
-										<span>chủ đề</span>
+			</div>
+			<Tabs defaultActiveKey="1" onChange={callback}>
+				<TabPane tab="Miêu tả" key="1">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper.
+						Nulla tellus mi,
+						vulputate adipiscing cursus eu, suscipit id nulla.
+					</p>
+					<p>Pellentesque aliquet, sem eget laoreet ultrices, ipsum metus feugiat sem, quis fermentum turpis eros eget velit. Donec ac tempus ante. Fusce ultricies massa massa. Fusce aliquam, purus eget sagittis vulputate, sapien libero hendrerit est, sed commodo augue nisi non neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						Sed tempor, lorem et placerat vestibulum, metus nisi posuere nisl, in accumsan elit odio quis mi.
+						Cras neque metus, consequat et blandit et, luctus a nunc.
+						gravida vehicula tellus, in imperdiet ligula euismod eget.</p>
+				</TabPane>
+				<TabPane tab="Chỉ rõ" key="2">
+					<div className="product_d_table">
+						<form action="#">
+							<table >
+								<tbody>
+								<tr>
+									<td className="first_child">Sáng tác</td>
+									<td>Polyester</td>
+								</tr>
+								<tr>
+									<td className="first_child">Phong cách</td>
+									<td>Nữ tính</td>
+								</tr>
+								<tr>
+									<td className="first_child">Tính chất</td>
+									<td>Váy ngắn</td>
+								</tr>
+								</tbody>
+							</table>
+						</form>
+					</div>
+					<p>Fashion has been creating well-designed collections since 2010.
+						The brand offers feminine designs delivering stylish separates and statement dresses which have since evolved into a full ready-to-wear collection in which every item is a vital part of a woman's wardrobe.
+						The result? Cool, easy, chic looks with youthful elegance and unmistakable signature style. All the beautiful pieces are made in Italy and manufactured with the greatest attention.
+						Now Fashion extends to a range of accessories including shoes, hats, belts and more!</p>
+				</TabPane>
+				<TabPane tab="Tab 3" key="3">
+					<div>
+						<h2>1 Review for Donec eu furniture</h2>
+						<div className={'reviews_comment_box'}>
+							<div className="comment_thmb">
+								<img src="https://htmldemo.net/rusu/rusu/assets/img/blog/comment2.jpg" alt=""/>
+							</div>
+							<div className="comment_text">
+								<div className="reviews_meta">
+									<div className="product_rating">
+										<Rate />
 									</div>
+									<p><strong>ADMIN </strong>- ngày 12 tháng 9 năm 2018</p>
+									<span>chủ đề</span>
 								</div>
+							</div>
 
-							</div>
-							<div className="comment_title">
-								<h2>Thêm một bài đánh giá</h2>
-								<p>Địa chỉ email của bạn sẽ không được công bố. Các trường bắt buộc được đánh dấu </p>
-							</div>
-							<div className="product_rating mb-10">
-								<h3>Your rating</h3>
-								<Rate/>
-							</div>
-							<>
-								{state.comments.length > 0 && <CommentList comments={state.comments} />}
-								<Comment
-
-									content={
-										<Editor
-											onChange={handleChange}
-											onSubmit={handleSubmit}
-											submitting={state.submitting}
-											value={state.value}
-										/>
-									}
-								/>
-							</>
 						</div>
-						<Form
-							name="basic"
-							labelCol={{ span: 4 }}
-							wrapperCol={{ span: 20 }}
-							initialValues={{ remember: true }}
-							onFinish={onFinish}
-							onFinishFailed={onFinishFailed}
-							autoComplete="off"
+						<div className="comment_title">
+							<h2>Thêm một bài đánh giá</h2>
+							<p>Địa chỉ email của bạn sẽ không được công bố. Các trường bắt buộc được đánh dấu </p>
+						</div>
+						<div className="product_rating mb-10">
+							<h3>Your rating</h3>
+							<Rate/>
+						</div>
+						<>
+							{state.comments.length > 0 && <CommentList comments={state.comments} />}
+							<Comment
+
+								content={
+									<Editor
+										onChange={handleChange}
+										onSubmit={handleSubmit}
+										submitting={state.submitting}
+										value={state.value}
+									/>
+								}
+							/>
+						</>
+					</div>
+					<Form
+						name="basic"
+						labelCol={{ span: 4 }}
+						wrapperCol={{ span: 20 }}
+						initialValues={{ remember: true }}
+						onFinish={onFinish}
+						onFinishFailed={onFinishFailed}
+						autoComplete="off"
+					>
+						<Form.Item
+							label="Username"
+							name="username"
+							rules={[{ required: true, message: 'Please input your username!' }]}
 						>
-							<Form.Item
-								label="Username"
-								name="username"
-								rules={[{ required: true, message: 'Please input your username!' }]}
-							>
-								<Input />
-							</Form.Item>
+							<Input />
+						</Form.Item>
 
-							<Form.Item
-								label="Password"
-								name="password"
-								rules={[{ required: true, message: 'Please input your password!' }]}
-							>
-								<Input.Password />
-							</Form.Item>
+						<Form.Item
+							label="Password"
+							name="password"
+							rules={[{ required: true, message: 'Please input your password!' }]}
+						>
+							<Input.Password />
+						</Form.Item>
 
 
 
-							<Form.Item wrapperCol={{ offset: 4, span: 20 }}>
-								<Button type="primary" htmlType="submit">
-									Submit
-								</Button>
-							</Form.Item>
-						</Form>
-					</TabPane>
-				</Tabs>
-				<div className={'wrapper detail-w'}>
-					<div className={'title home-title'}>
-						<Row>
-							<Col span={8}>
-								<h2 >NHỮNG SẢM PHẨM TƯƠNG TỰ</h2>
-							</Col>
-							<Col span={8} offset={8}>
-								<div className={'group-icon'}>
-									<LeftOutlined
-										onClick={()=>carouselRef.current?.prev()}
-										style={{cursor: 'pointer'}}
-									/>
-									<RightOutlined
-										onClick={()=>carouselRef.current?.next()}
-										style={{cursor: 'pointer'}}
-									/>
-								</div>
-							</Col>
-						</Row>
-					</div>
-					<div className={'device'}>
-						<Carousel {...settings} ref={carouselRef} className={'caro'}>
-							{
-								devices.map((it)=>(
-									<Card
-										key={it.id}
-										hoverable
-										cover={
-											<div>
-												<a href={'/#'}>{it.name}</a>
-												<Rate/>
-												<span className={'sale'}>SALE</span>
-												<img alt="example" src={it.img} />
-												<button className={'btn-deal'}>{'Chi tiết'}</button>
-												<ul className={'addto'}>
-													<li><button className={'troy'}>{'Thêm vào giỏ hàng '}</button></li>
-													<li><button className={'tym'}><HeartOutlined /></button></li>
-													<li><button className={'upto'}><SwapOutlined /></button></li>
-												</ul>
-											</div>
-
-										}>
-										<Space>
-											<Meta title={it.sale}  className={'sale-price'}/>
-											<Meta title={it.price} className={'ol-price'}/>
-										</Space>
-
-									</Card>
-								))
-							}
-						</Carousel>
-
-					</div>
+						<Form.Item wrapperCol={{ offset: 4, span: 20 }}>
+							<Button type="primary" htmlType="submit">
+								Submit
+							</Button>
+						</Form.Item>
+					</Form>
+				</TabPane>
+			</Tabs>
+			<div className={'wrapper detail-w'}>
+				<div className={'title home-title'}>
+					<Row>
+						<Col span={8}>
+							<h2 >NHỮNG SẢM PHẨM TƯƠNG TỰ</h2>
+						</Col>
+						<Col span={8} offset={8}>
+							<div className={'group-icon'}>
+								<LeftOutlined
+									onClick={()=>carouselRef.current?.prev()}
+									style={{cursor: 'pointer'}}
+								/>
+								<RightOutlined
+									onClick={()=>carouselRef.current?.next()}
+									style={{cursor: 'pointer'}}
+								/>
+							</div>
+						</Col>
+					</Row>
 				</div>
-				<div className={'wrapper detail-w'}>
-					<div className={'title home-title'}>
-						<Row>
-							<Col span={8}>
-								<h2 >SẢN PHẨM UPSELL</h2>
-							</Col>
-							<Col span={8} offset={8}>
-								<div className={'group-icon'}>
-									<LeftOutlined
-										onClick={()=>carouse.current?.prev()}
-										style={{cursor: 'pointer'}}
-									/>
-									<RightOutlined
-										onClick={()=>carouse.current?.next()}
-										style={{cursor: 'pointer'}}
-									/>
-								</div>
-							</Col>
-						</Row>
-					</div>
-					<div className={'device'}>
-						<Carousel {...settings} ref={carouse} className={'caro'}>
-							{
-								Detaildevices.map((it)=>(
-									<Card
-										key={it.id}
-										hoverable
-										cover={
-											<div>
-												<a href={'/#'}>{it.name}</a>
-												<Rate/>
-												<span className={'sale'}>SALE</span>
-												<img alt="example" src={it.img} />
-												<button className={'btn-deal'}>{'Chi tiết'}</button>
-												<ul className={'addto'}>
-													<li><button className={'troy'}>{'Thêm vào giỏ hàng '}</button></li>
-													<li><button className={'tym'}><HeartOutlined /></button></li>
-													<li><button className={'upto'}><SwapOutlined /></button></li>
-												</ul>
-											</div>
+				<div className={'device'}>
+					<Carousel {...settings} ref={carouselRef} className={'caro'}>
+						{
+							devices.map((it)=>(
+								<Card
+									key={it.id}
+									hoverable
+									cover={
+										<div>
+											<a href={'/#'}>{it.name}</a>
+											<Rate/>
+											<span className={'sale'}>SALE</span>
+											<img alt="example" src={it.img} />
+											<button className={'btn-deal'}>{'Chi tiết'}</button>
+											<ul className={'addto'}>
+												<li><button className={'troy'}>{'Thêm vào giỏ hàng '}</button></li>
+												<li><button className={'tym'}><HeartOutlined /></button></li>
+												<li><button className={'upto'}><SwapOutlined /></button></li>
+											</ul>
+										</div>
 
-										}>
-										<Space>
-											<Meta title={it.sale}  className={'sale-price'}/>
-											<Meta title={it.price} className={'ol-price'}/>
-										</Space>
+									}>
+									<Space>
+										<Meta title={it.sale}  className={'sale-price'}/>
+										<Meta title={it.price} className={'ol-price'}/>
+									</Space>
 
-									</Card>
-								))
-							}
-						</Carousel>
+								</Card>
+							))
+						}
+					</Carousel>
 
-					</div>
 				</div>
 			</div>
-		</div>
+			<div className={'wrapper detail-w'}>
+				<div className={'title home-title'}>
+					<Row>
+						<Col span={8}>
+							<h2 >SẢN PHẨM UPSELL</h2>
+						</Col>
+						<Col span={8} offset={8}>
+							<div className={'group-icon'}>
+								<LeftOutlined
+									onClick={()=>carouse.current?.prev()}
+									style={{cursor: 'pointer'}}
+								/>
+								<RightOutlined
+									onClick={()=>carouse.current?.next()}
+									style={{cursor: 'pointer'}}
+								/>
+							</div>
+						</Col>
+					</Row>
+				</div>
+				<div className={'device'}>
+					<Carousel {...settings} ref={carouse} className={'caro'}>
+						{
+							Detaildevices.map((it)=>(
+								<Card
+									key={it.id}
+									hoverable
+									cover={
+										<div>
+											<a href={'/#'}>{it.name}</a>
+											<Rate/>
+											<span className={'sale'}>SALE</span>
+											<img alt="example" src={it.img} />
+											<button className={'btn-deal'}>{'Chi tiết'}</button>
+											<ul className={'addto'}>
+												<li><button className={'troy'}>{'Thêm vào giỏ hàng '}</button></li>
+												<li><button className={'tym'}><HeartOutlined /></button></li>
+												<li><button className={'upto'}><SwapOutlined /></button></li>
+											</ul>
+										</div>
+
+									}>
+									<Space>
+										<Meta title={it.sale}  className={'sale-price'}/>
+										<Meta title={it.price} className={'ol-price'}/>
+									</Space>
+
+								</Card>
+							))
+						}
+					</Carousel>
+
+				</div>
+			</div>
+			</div>
 	);
 };
 

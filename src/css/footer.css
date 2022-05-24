@@ -304,6 +304,7 @@
 @media only screen and (width: 320px){
     .first .ant-row .ant-col .subscribe_form form{
         width: 245px;
+        margin-top: 20px;
     }
     .subscribe_form form input {
         width: 100%;
@@ -318,7 +319,7 @@
         width: 100%;
     }
     .first .ant-row .ant-col .posts h3{
-        font-size: 15px;
+        font-size: 13px;
     }
     .first .ant-row .ant-col .posts p{
         font-size: 10px;
