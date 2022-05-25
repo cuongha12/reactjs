@@ -5,6 +5,7 @@ import {HeartOutlined,FacebookOutlined,TwitterOutlined,AppleOutlined,YoutubeOutl
 
 const footerDatas = [
 	{
+		id:1,
 		title: 'Liên hệ',
 		children: [
 			{path: '', label: 'Địa chỉ: 234 Hoàng Quốc Việt'},
@@ -14,6 +15,7 @@ const footerDatas = [
 		]
 	},
 	{
+		id:2,
 		title: 'THÔNG TIN',
 		children: [
 			{path: '', label: 'Về chúng tôi'},
@@ -25,6 +27,7 @@ const footerDatas = [
 		]
 	},
 	{
+		id:3,
 		title: 'TÀI KHOẢN CỦA TÔI',
 		children: [
 			{path: '', label: 'Tài khoản của tôi'},
@@ -36,6 +39,7 @@ const footerDatas = [
 		]
 	},
 	{
+		id:4,
 		title: 'DỊCH VỤ KHÁCH HÀNG',
 		children: [
 			{path: '', label: 'Sơ đồ trang web'},
@@ -47,6 +51,7 @@ const footerDatas = [
 		]
 	},
 	{
+		id:5,
 		title: 'HÃY ĐỂ CHÚNG TÔI GIÚP BẠN',
 		children: [
 			{path: '', label: 'Tài khoản của tôi'},
@@ -90,14 +95,14 @@ const Footer = () => {
 				<Row gutter={[12, 0]}>
 					{
 						footerDatas.map((el, index)=>(
-							<Col key={index} lg={index===0?8:4} sm={8} xs={24}>
+							<Col key={el.id} lg={index===0?8:4} sm={8} xs={24}>
 								<div className={'widgets_container contact_us'}>
 									<h3>{el.title}</h3>
 									<div className={'footer_contact'}>
 										<ul>
 											{
 												el.children.map((it, index)=>(
-													<li>{index!==0?
+													<li key={index}>{index!==0?
 														<a href={it.path}>
 															{it.label}
 														</a>:it.label}

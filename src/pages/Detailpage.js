@@ -7,6 +7,7 @@ import { Rate } from 'antd';
 import { Divider } from 'antd';
 import {useParams} from "react-router-dom";
 import {products} from "../components/Pricelaptop";
+// import {devices} from "../components/DealInDay";
 import {HeartOutlined, LeftOutlined, RightOutlined, SwapOutlined} from '@ant-design/icons';
 import { Image } from 'antd';
 import { Tabs } from 'antd';
@@ -94,6 +95,8 @@ const thumnais = [
 	{src: 'https://htmldemo.net/rusu/rusu/assets/img/product/productbig4.jpg'},
 	{src: 'https://htmldemo.net/rusu/rusu/assets/img/product/productbig5.jpg'},
 	{src: 'https://htmldemo.net/rusu/rusu/assets/img/product/productbig1.jpg'},
+	{src: 'https://htmldemo.net/rusu/rusu/assets/img/product/productbig1.jpg'},
+	{src: 'https://htmldemo.net/rusu/rusu/assets/img/product/productbig1.jpg'},
 
 ]
 
@@ -116,7 +119,7 @@ const Editor = ({ onChange, value }) => (
 
 
 
-const devices = [
+const devicess = [
 	{
 		id: 1,
 		img: 'https://htmldemo.net/rusu/rusu/assets/img/product/product4.jpg',
@@ -228,6 +231,12 @@ const Detailpage = () => {
 		//Tìm kiếm key same id -> sản phẩm
 		setProduct(products.find((x) => x.key === parseInt(id)))
 	},[id])
+
+	// useEffect(()=>{
+	// 	//Tìm kiếm key same id -> sản phẩm
+	// 	setProduct(devices.find((x) => x.key === parseInt(id)))
+	// },[id])
+
 	const onFinish = (values) => {
 		console.log('Success:', values);
 	};
@@ -244,8 +253,9 @@ const Detailpage = () => {
 					<Col  sm={24}>
 						<div className={'product-details-tab'}>
 							<div className={'zoomWrapper single-zoom'}>
-								<a >
+								<a href={'#@'}>
 									<Image  src={product?.img}/>
+
 								</a>
 							</div>
 						</div>
@@ -293,10 +303,10 @@ const Detailpage = () => {
 								<h3>Tùy chọn có sẵn</h3>
 								<label>Màu</label>
 								<ul>
-									<li className={'color1'}><a ></a></li>
-									<li className={'color2'}><a ></a></li>
-									<li className={'color3'}><a> </a></li>
-									<li className={'color4'}><a ></a></li>
+									<li className={'color1'}><a href={'#$'}></a></li>
+									<li className={'color2'}><a href={'#@'}></a></li>
+									<li className={'color3'}><a href={'#$'}></a></li>
+									<li className={'color4'}><a href={'#$'}></a></li>
 
 								</ul>
 							</div>
@@ -308,9 +318,9 @@ const Detailpage = () => {
 							<Times targetDate={dateTimeAfterThreeDays}/>
 							<div className=" product_d_action">
 								<ul>
-									<li><a href="#" title="Add to wishlist">+ Add to Wishlist</a></li>
-									<li><a href="#" title="Add to wishlist">+ Compare</a></li>
-									<li><span>Category: <a href="#">Clothing</a></span></li>
+									<li><a href="/#" title="Add to wishlist">+ Add to Wishlist</a></li>
+									<li><a href="/#" title="Add to wishlist">+ Compare</a></li>
+									<li><span>Category: <a href="/#">Clothing</a></span></li>
 								</ul>
 							</div>
 
@@ -454,7 +464,7 @@ const Detailpage = () => {
 				<div className={'device'}>
 					<Carousel {...settings} ref={carouselRef} className={'caro'}>
 						{
-							devices.map((it)=>(
+							devicess.map((it)=>(
 								<Card
 									key={it.id}
 									hoverable

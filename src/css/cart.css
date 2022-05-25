@@ -1,0 +1,42 @@
+.table-cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding: 50px;
+}
+.table-cart table tbody tr td{
+    font-weight: 500;
+    text-transform: capitalize;
+    font-size: 14px;
+    padding: 20px;
+    border: 1px solid #ebebeb;
+
+}
+.table-cart table{
+    width: 100%;
+}
+.table-cart table tbody tr td img{
+   width: 100px;
+}
+.table-cart table tbody tr .product_remove{
+    border-bottom: 3px solid #2e6ed5;
+    border-right: 0;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+    background: #ebebeb;
+    border-left: 0;
+    padding: 10px;
+}
+.table-cart table tbody tr td a{
+    cursor: pointer;
+    color: #000000;
+
+}
+.table-cart table tbody tr td a:hover{
+
+    color: #2e6ed5;
+
+}

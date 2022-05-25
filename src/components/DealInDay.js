@@ -2,6 +2,11 @@ import React, {useRef} from 'react';
 import {Card, Carousel, Col, Row, Rate, Space} from "antd";
 import {LeftOutlined, RightOutlined,HeartOutlined,SwapOutlined} from "@ant-design/icons";
 import CountdownTimer from "./CountdownTimer";
+// import {useNavigate} from "react-router-dom";
+import path from "../contants/path";
+import CsLink from "./CsLink";
+
+
 const {Meta} = Card
 
 
@@ -42,9 +47,9 @@ const devices = [
 		name: 'Nokia 1280'
 	},
 ]
-
+// export {devices}
 const DealInDay = () => {
-
+	// let navigate = useNavigate();
 	const carouselRef = useRef();
 
 	const THREE_DAYS_IN_MS = 5 * 24 * 60 * 60 * 1000;
@@ -110,9 +115,15 @@ const DealInDay = () => {
 					{
 						devices.map((it)=>(
 							<Card
+
+								// onClick={(event)=>{
+								// 	event.preventDefault()
+								// 	navigate(path.PRODUCT + it.key);
+								// }}
 								key={it.id}
 								hoverable
 								cover={
+
 								<div>
 									<a href={'/#'}>{it.name}</a>
 									<Rate/>
@@ -120,7 +131,7 @@ const DealInDay = () => {
 									<img alt="example" src={it.img} />
 									<button className={'btn-deal'}>{'Chi tiết'}</button>
 									<ul className={'addto'}>
-										<li><button className={'troy'}>{'Thêm vào giỏ hàng '}</button></li>
+										<li><button className={'troy'}><CsLink to={path.CART} >{'Thêm vào giỏ hàng '}</CsLink></button></li>
 										<li><button className={'tym'}><HeartOutlined /></button></li>
 										<li><button className={'upto'}><SwapOutlined /></button></li>
 									</ul>

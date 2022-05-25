@@ -4,6 +4,7 @@ import ShopPage from "../pages/ShopPage";
 import BlogPage from "../pages/BlogPage";
 import ContactPage from "../pages/ContactPage";
 import Detailpage from "../pages/Detailpage";
+import CartPage from "../pages/CartPage";
 
 const GroupRoute = [
 	{path: path.HOME, component: <HomePage/>},
@@ -11,6 +12,7 @@ const GroupRoute = [
 	{path: path.SHOP, component: <BlogPage/>},
 	{path: path.CONTACT, component: <ContactPage/>},
 	{path: path.DETAIL,component: <Detailpage/>},
+	{path: path.CART,component: <CartPage/>},
 ]
 
 export default GroupRoute
