@@ -7,7 +7,7 @@ import { Rate } from 'antd';
 import { Divider } from 'antd';
 import {useParams} from "react-router-dom";
 import {products} from "../components/Pricelaptop";
-// import {devices} from "../components/DealInDay";
+import {devices} from "../components/DealInDay";
 import {HeartOutlined, LeftOutlined, RightOutlined, SwapOutlined} from '@ant-design/icons';
 import { Image } from 'antd';
 import { Tabs } from 'antd';
@@ -206,7 +206,6 @@ const Detailpage = () => {
 
 
 	};
-
 	const handleChange = e => {
 		setState({
 			...state,
@@ -220,22 +219,21 @@ const Detailpage = () => {
 	});
 	const THREE_DAYS_IN_MS = 5 * 24 * 60 * 60 * 1000;
 	const NOW_IN_MS = new Date().getTime();
-
 	const dateTimeAfterThreeDays = NOW_IN_MS + THREE_DAYS_IN_MS;
-
 	const {id} = useParams();
+
 	const Carousell = useRef();
 	const [product, setProduct] = useState(null);
+
 
 	useEffect(()=>{
 		//Tìm kiếm key same id -> sản phẩm
 		setProduct(products.find((x) => x.key === parseInt(id)))
 	},[id])
 
-	// useEffect(()=>{
-	// 	//Tìm kiếm key same id -> sản phẩm
-	// 	setProduct(devices.find((x) => x.key === parseInt(id)))
-	// },[id])
+	useEffect(()=>{
+		setProduct(devices.find((y) => y.id === parseInt(id)))
+	},[id])
 
 	const onFinish = (values) => {
 		console.log('Success:', values);
@@ -253,9 +251,8 @@ const Detailpage = () => {
 					<Col  sm={24}>
 						<div className={'product-details-tab'}>
 							<div className={'zoomWrapper single-zoom'}>
-								<a href={'#@'}>
+								<a>
 									<Image  src={product?.img}/>
-
 								</a>
 							</div>
 						</div>
@@ -277,6 +274,7 @@ const Detailpage = () => {
 											cover={<img alt={"ex" + index} src={el.src} />}
 										/>
 									))
+
 								}
 							</Carousel>
 						</div>
@@ -303,10 +301,10 @@ const Detailpage = () => {
 								<h3>Tùy chọn có sẵn</h3>
 								<label>Màu</label>
 								<ul>
-									<li className={'color1'}><a href={'#$'}></a></li>
-									<li className={'color2'}><a href={'#@'}></a></li>
-									<li className={'color3'}><a href={'#$'}></a></li>
-									<li className={'color4'}><a href={'#$'}></a></li>
+									<li className={'color1'}><a ></a></li>
+									<li className={'color2'}><a ></a></li>
+									<li className={'color3'}><a ></a></li>
+									<li className={'color4'}><a ></a></li>
 
 								</ul>
 							</div>

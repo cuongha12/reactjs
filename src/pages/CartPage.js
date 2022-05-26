@@ -1,7 +1,22 @@
 import React from 'react';
 import '../css/cart.css'
 import {Col, Row} from "antd";
+import {useParams} from "react-router-dom";
+import {devices} from "../components/DealInDay";
+import {useEffect, useState} from 'react';
+
 const CartPage = () => {
+	const [isOpenMenu, setIsOpenMenu] = useState(false);
+
+	const onClose = () => {
+		setIsOpenMenu(false)
+	}
+	const {id} = useParams();
+	const [cart, setCart] = useState(null);
+
+	useEffect(()=>{
+		setCart(devices.find((x) => x.id === parseInt(id)))
+	},[id])
 	return (
 		<div>
 			<div className={'content'}>
@@ -24,12 +39,12 @@ const CartPage = () => {
 								<th className={'product_remove'}>Xóa bỏ</th>
 							</tr>
 							<tr>
-								<td><a ><img src={'https://htmldemo.net/rusu/rusu/assets/img/s-product/product.jpg'} alt={''}/></a></td>
-								<td><a  >Túi xách Fringilla</a></td>
+								<td><a ><img src={cart?.img} alt={''}/></a></td>
+								<td><a>{cart?.name}</a></td>
 								<td>£ 65,00</td>
-								<td><input type={'number'} defaultValue={100} min={1} max={100}/></td>
+								<td><input type={'number'} defaultValue={1} min={1} max={100}/></td>
 								<td>£ 65,00</td>
-								<td><button>Xoá bỏ</button></td>
+								<td><button style={{cursor: "pointer"}} onClick={()=>onClose()}>Xoá bỏ</button></td>
 							</tr>
 							</tbody>
 

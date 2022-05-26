@@ -1,14 +1,12 @@
-import React, {useRef} from 'react';
+import React, {useRef,useState} from 'react';
 import {Card, Carousel, Col, Row, Rate, Space} from "antd";
 import {LeftOutlined, RightOutlined,HeartOutlined,SwapOutlined} from "@ant-design/icons";
 import CountdownTimer from "./CountdownTimer";
-// import {useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import path from "../contants/path";
-import CsLink from "./CsLink";
 
 
 const {Meta} = Card
-
 
 const devices = [
 	{
@@ -47,9 +45,10 @@ const devices = [
 		name: 'Nokia 1280'
 	},
 ]
-// export {devices}
+export {devices}
 const DealInDay = () => {
-	// let navigate = useNavigate();
+
+	let navigates = useNavigate();
 	const carouselRef = useRef();
 
 	const THREE_DAYS_IN_MS = 5 * 24 * 60 * 60 * 1000;
@@ -87,7 +86,20 @@ const DealInDay = () => {
 			}
 		]
 	}
+	const [cart, setCart] = useState([]);
+	const onCart = (id) =>{
+		const indexCart = cart.findIndex(x => x.id === id)
+		if(indexCart > -1) {
+			let product = cart[indexCart]
+			product.quantity += 1
+			setCart(cart.map(x=>x.id===id?devices:x))
+			console.log(product)
+		} else {
+			setCart([...cart, {id, quantity: 1}])
+		}
 
+
+	}
 
 	return (
 		<div className={'wrapper'}>
@@ -116,10 +128,7 @@ const DealInDay = () => {
 						devices.map((it)=>(
 							<Card
 
-								// onClick={(event)=>{
-								// 	event.preventDefault()
-								// 	navigate(path.PRODUCT + it.key);
-								// }}
+
 								key={it.id}
 								hoverable
 								cover={
@@ -128,10 +137,32 @@ const DealInDay = () => {
 									<a href={'/#'}>{it.name}</a>
 									<Rate/>
 									<span className={'sale'}>SALE</span>
-									<img alt="example" src={it.img} />
+									<img alt="example" src={it.img}
+										 onClick={(event)=>{
+											 event.preventDefault()
+											 navigates(path.PRODUCT + it.id);
+										 }}
+									/>
 									<button className={'btn-deal'}>{'Chi tiết'}</button>
 									<ul className={'addto'}>
-										<li><button className={'troy'}><CsLink to={path.CART} >{'Thêm vào giỏ hàng '}</CsLink></button></li>
+										<li>
+
+												<button className={'troy'}
+														onClick={(event)=>{
+																event.preventDefault()
+																navigates(path.CART)
+															onCart(it.id)
+															}
+
+
+
+														}
+
+												>
+													{'Thêm vào giỏ hàng '}
+												</button>
+
+										</li>
 										<li><button className={'tym'}><HeartOutlined /></button></li>
 										<li><button className={'upto'}><SwapOutlined /></button></li>
 									</ul>
