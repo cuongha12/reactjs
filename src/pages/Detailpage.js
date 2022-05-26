@@ -223,7 +223,7 @@ const Detailpage = () => {
 	const {id} = useParams();
 
 	const Carousell = useRef();
-	const [product, setProduct] = useState(null);
+	const [product, setProduct] = useState([]);
 
 
 	useEffect(()=>{

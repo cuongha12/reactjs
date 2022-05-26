@@ -151,7 +151,7 @@ const DealInDay = () => {
 														onClick={(event)=>{
 																event.preventDefault()
 																navigates(path.CART)
-															onCart(it.id)
+																onCart(it.id)
 															}
 
 

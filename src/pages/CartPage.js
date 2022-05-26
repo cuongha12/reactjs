@@ -6,11 +6,11 @@ import {devices} from "../components/DealInDay";
 import {useEffect, useState} from 'react';
 
 const CartPage = () => {
-	const [isOpenMenu, setIsOpenMenu] = useState(false);
-
-	const onClose = () => {
-		setIsOpenMenu(false)
-	}
+	// const [isOpenMenu, setIsOpenMenu] = useState(false);
+	//
+	// const onClose = () => {
+	// 	setIsOpenMenu(false)
+	// }
 	const {id} = useParams();
 	const [cart, setCart] = useState(null);
 
@@ -44,7 +44,7 @@ const CartPage = () => {
 								<td>£ 65,00</td>
 								<td><input type={'number'} defaultValue={1} min={1} max={100}/></td>
 								<td>£ 65,00</td>
-								<td><button style={{cursor: "pointer"}} onClick={()=>onClose()}>Xoá bỏ</button></td>
+								<td><button style={{cursor: "pointer"}}>Xoá bỏ</button></td>
 							</tr>
 							</tbody>
 
