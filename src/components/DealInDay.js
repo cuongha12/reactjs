@@ -93,7 +93,6 @@ const DealInDay = () => {
 			let product = cart[indexCart]
 			product.quantity += 1
 			setCart(cart.map(x=>x.id===id?devices:x))
-			console.log(product)
 		} else {
 			setCart([...cart, {id, quantity: 1}])
 		}
@@ -153,8 +152,6 @@ const DealInDay = () => {
 																navigates(path.CART)
 																onCart(it.id)
 															}
-
-
 
 														}
 

@@ -54,6 +54,15 @@
 .form-us{
     display: none;
 }
+.contact-title{
+    text-align: center;
+}
+.ant-form-item-control-input-content {
+    flex: auto;
+    max-width: 100%;
+    display: flex;
+    justify-content: start;
+}
 @media only screen and (max-width: 425px){
     .form{
         display: none;
