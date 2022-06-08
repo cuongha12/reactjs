@@ -1,4 +1,4 @@
-import React, {useRef,useState} from 'react';
+import React, {useRef} from 'react';
 import {Card, Carousel, Col, Row, Rate, Space} from "antd";
 import {LeftOutlined, RightOutlined,HeartOutlined,SwapOutlined} from "@ant-design/icons";
 import CountdownTimer from "./CountdownTimer";
@@ -87,9 +87,8 @@ const DealInDay = () => {
 		]
 	}
 
-	const onCart = (id) => {
-	 const newProduct = devices.find(e=>e.id === parseInt(id))
-		localStorage.setItem('cart',newProduct)
+	const onCart = () => {
+
 	}
 
 	return (

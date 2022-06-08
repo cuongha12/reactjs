@@ -13,6 +13,7 @@ const GroupRoute = [
 	{path: path.CONTACT, component: <ContactPage/>},
 	{path: path.DETAIL,component: <Detailpage/>},
 	{path: path.SHOPPING,component: <CartPage/>},
+	{path: path.ITEM,component: <}
 ]
 
 export default GroupRoute

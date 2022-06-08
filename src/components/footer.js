@@ -103,9 +103,7 @@ const Footer = () => {
 											{
 												el.children.map((it, index)=>(
 													<li key={index}>{index!==0?
-														<a href={it.path}>
-															{it.label}
-														</a>:it.label}
+														<a href={it.path}>{it.label}</a>:it.label}
 													</li>
 												))
 											}

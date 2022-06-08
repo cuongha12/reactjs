@@ -9,8 +9,16 @@ const CartPage = () => {
 	const {id} = useParams();
 	const [items, setItems] = useState([]);
 	useEffect(()=>{
-		setItems(devices.find(e=>e.id === parseInt(id)))
+		const cartProducts = devices.find(e=>e.id === parseInt(id))
+		setItems(cartProducts)
+		// console.log(cartProducts)
+		localStorage.setItem('products',cartProducts)
+
 	},[id])
+	const deLete = () =>{
+		const cartProducts = devices.filter(e=>e.id === parseInt(id))
+		setItems(cartProducts)
+	}
 	return (
 		<div>
 			<div className={'content'}>
@@ -29,7 +37,6 @@ const CartPage = () => {
 								<th className={'product_remove'}>Sản phẩm</th>
 								<th className={'product_remove'}>Giá</th>
 								<th className={'product_remove'}>Số lượng</th>
-								<th className={'product_remove'}>Toàn bộ</th>
 								<th className={'product_remove'}>Xóa bỏ</th>
 							</tr>
 							<tr>
@@ -37,8 +44,7 @@ const CartPage = () => {
 								<td><a>{items?.name}</a></td>
 								<td>{items?.price}</td>
 								<td><input type={'number'} defaultValue={1} min={1} max={100}/></td>
-								<td>£ 65,00</td>
-								<td><button style={{cursor: "pointer"}}>Xoá bỏ</button></td>
+								<td><button style={{cursor: "pointer"}} onClick={()=>deLete()}>Xoá bỏ</button></td>
 							</tr>
 							</tbody>
 
