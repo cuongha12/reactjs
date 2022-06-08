@@ -63,6 +63,21 @@
     display: flex;
     justify-content: start;
 }
+.ant-form-item-control-input-content {
+    flex: auto;
+    max-width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.ant-form-item-explain-error {
+    color: #ff4d4f;
+    text-align: center;
+}
+.ant-form-item-control-input-content .ant-btn .ant-btn-primary .ant-btn-block{
+    width: 57% !important;
+}
+
 @media only screen and (max-width: 425px){
     .form{
         display: none;

@@ -2,6 +2,8 @@ import React from 'react';
 import { Row, Col } from 'antd';
 import {SnippetsOutlined,PhoneOutlined,InstagramOutlined} from '@ant-design/icons';
 import { Form, Input, Button,Checkbox } from 'antd';
+
+
 const Location = () => {
 	const layout = {
 		labelCol: { span: 8},
@@ -129,7 +131,7 @@ const Location = () => {
 												return Promise.resolve();
 											}
 											return Promise.reject(
-												"Mật khẩu không khớp"
+												"Mật khẩu không đủ mạnh"
 											);
 										},
 									}),
@@ -159,13 +161,14 @@ const Location = () => {
 							>
 								<Checkbox>
 									{" "}
-									Đồng ý với <a href="#">Các điều khoản và điều kiện</a>
+									Đồng ý với <a href="/#">Các điều khoản và điều kiện</a>
 								</Checkbox>
 							</Form.Item>
 							<Form.Item wrapperCol={{ span: 24 }}>
 								<Button block type="primary" htmlType="submit">
 									Đồng ý
 								</Button>
+
 							</Form.Item>
 						</Form>
 					</Col>

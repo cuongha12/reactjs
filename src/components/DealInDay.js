@@ -86,18 +86,10 @@ const DealInDay = () => {
 			}
 		]
 	}
-	const [cart, setCart] = useState([]);
-	const onCart = (id) =>{
-		const indexCart = cart.findIndex(x => x.id === id)
-		if(indexCart > -1) {
-			let product = cart[indexCart]
-			product.quantity += 1
-			setCart(cart.map(x=>x.id===id?devices:x))
-		} else {
-			setCart([...cart, {id, quantity: 1}])
-		}
 
-
+	const onCart = (id) => {
+	 const newProduct = devices.find(e=>e.id === parseInt(id))
+		localStorage.setItem('cart',newProduct)
 	}
 
 	return (
@@ -126,8 +118,6 @@ const DealInDay = () => {
 					{
 						devices.map((it)=>(
 							<Card
-
-
 								key={it.id}
 								hoverable
 								cover={
@@ -147,9 +137,9 @@ const DealInDay = () => {
 										<li>
 
 												<button className={'troy'}
-														onClick={(event)=>{
-																event.preventDefault()
-																navigates(path.CART)
+														onClick={(item)=>{
+																item.preventDefault()
+																navigates(path.CART +it.id)
 																onCart(it.id)
 															}
 

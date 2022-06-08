@@ -12,7 +12,7 @@ const GroupRoute = [
 	{path: path.SHOP, component: <BlogPage/>},
 	{path: path.CONTACT, component: <ContactPage/>},
 	{path: path.DETAIL,component: <Detailpage/>},
-	{path: path.CART,component: <CartPage/>},
+	{path: path.SHOPPING,component: <CartPage/>},
 ]
 
 export default GroupRoute
