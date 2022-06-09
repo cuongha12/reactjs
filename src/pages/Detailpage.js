@@ -227,7 +227,7 @@ const Detailpage = () => {
 
 	useEffect((idItem)=>{
 		//Tìm kiếm key same id -> sản phẩm
-		const newItem = products.find((x) => x.id === parseInt(idItem))
+		const newItem = products.find((x) => x.id === idItem)
 		setProduct(newItem)
 
 
@@ -249,17 +249,16 @@ const Detailpage = () => {
 			<div className={'detail-container'}>
 				<Row>
 					<Col  sm={24}>
-						{
-							product?.map((it)=>(
+
 								<div className={'product-details-tab'}>
 									<div className={'zoomWrapper single-zoom'}>
 										<a>
-											<Image  src={it?.img}/>
+											<Image  src={product?.img}/>
 										</a>
 									</div>
 								</div>
-							))
-						}
+
+
 						<div className={'single-zoom-thumb'}>
 							<LeftOutlined onClick={()=>Carousell.current?.prev()} style={{cursor: 'pointer'}}/>
 							<RightOutlined onClick={()=>Carousell.current?.next()} style={{cursor: 'pointer'}}/>
