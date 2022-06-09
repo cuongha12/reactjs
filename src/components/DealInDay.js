@@ -8,44 +8,44 @@ import products from "../__mock__/products";
 
 const {Meta} = Card
 
-const devices = [
-	{
-		id: 1,
-		img: 'https://htmldemo.net/rusu/rusu/assets/img/product/product4.jpg',
-		price: '$70.00',
-		sale: '$10.00',
-		name: 'Camera 1200'
-	},
-	{
-		id: 2,
-		img: 'https://htmldemo.net/rusu/rusu/assets/img/product/product5.jpg',
-		price: '$78.00',
-		sale: '$20.00',
-		name: 'Laptop Asus'
-	},
-	{
-		id: 3,
-		img: 'https://htmldemo.net/rusu/rusu/assets/img/product/product6.jpg',
-		price: '$50.00',
-		sale: '$30.00',
-		name: 'Laptop'
-	},
-	{
-		id: 4,
-		img: 'https://htmldemo.net/rusu/rusu/assets/img/product/product7.jpg',
-		price: '$72.00',
-		sale: '$50.00',
-		name: 'Iphone 6'
-	},
-	{
-		id: 5,
-		img: 'https://htmldemo.net/rusu/rusu/assets/img/product/product8.jpg',
-		price: '$10.00',
-		sale: '$40.00',
-		name: 'Nokia 1280'
-	},
-]
-export {devices}
+// const devices = [
+// 	{
+// 		id: 1,
+// 		img: 'https://htmldemo.net/rusu/rusu/assets/img/product/product4.jpg',
+// 		price: '$70.00',
+// 		sale: '$10.00',
+// 		name: 'Camera 1200'
+// 	},
+// 	{
+// 		id: 2,
+// 		img: 'https://htmldemo.net/rusu/rusu/assets/img/product/product5.jpg',
+// 		price: '$78.00',
+// 		sale: '$20.00',
+// 		name: 'Laptop Asus'
+// 	},
+// 	{
+// 		id: 3,
+// 		img: 'https://htmldemo.net/rusu/rusu/assets/img/product/product6.jpg',
+// 		price: '$50.00',
+// 		sale: '$30.00',
+// 		name: 'Laptop'
+// 	},
+// 	{
+// 		id: 4,
+// 		img: 'https://htmldemo.net/rusu/rusu/assets/img/product/product7.jpg',
+// 		price: '$72.00',
+// 		sale: '$50.00',
+// 		name: 'Iphone 6'
+// 	},
+// 	{
+// 		id: 5,
+// 		img: 'https://htmldemo.net/rusu/rusu/assets/img/product/product8.jpg',
+// 		price: '$10.00',
+// 		sale: '$40.00',
+// 		name: 'Nokia 1280'
+// 	},
+// ]
+
 
 const DealInDay = () => {
 
@@ -92,6 +92,9 @@ const DealInDay = () => {
 		navigate(path.CART + idItem)
 		// console.log(idItem)
 	}
+	const navigateToProduct = (idItem) => {
+	  	navigate(path.PRODUCT + idItem)
+	}
 
 	return (
 		<div className={'wrapper'}>
@@ -130,7 +133,7 @@ const DealInDay = () => {
 									<img alt="example" src={it.img}
 										 onClick={(event)=>{
 											 event.preventDefault()
-											 navigate(path.PRODUCT + it.id);
+											 navigateToProduct( it.id);
 										 }}
 									/>
 									<button className={'btn-deal'}>{'Chi tiết'}</button>

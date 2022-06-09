@@ -6,8 +6,7 @@ import '../css/detail.css'
 import { Rate } from 'antd';
 import { Divider } from 'antd';
 import {useParams} from "react-router-dom";
-import {products} from "../components/Pricelaptop";
-import {devices} from "../components/DealInDay";
+import products from "../__mock__/products";
 import {HeartOutlined, LeftOutlined, RightOutlined, SwapOutlined} from '@ant-design/icons';
 import { Image } from 'antd';
 import { Tabs } from 'antd';
@@ -226,14 +225,15 @@ const Detailpage = () => {
 	const [product, setProduct] = useState([]);
 
 
-	useEffect(()=>{
+	useEffect((idItem)=>{
 		//Tìm kiếm key same id -> sản phẩm
-		setProduct(products.find((x) => x.key === parseInt(id)))
+		const newItem = products.find((x) => x.id === parseInt(idItem))
+		setProduct(newItem)
+
+
 	},[id])
 
-	useEffect(()=>{
-		setProduct(devices.find((y) => y.id === parseInt(id)))
-	},[id])
+
 
 	const onFinish = (values) => {
 		console.log('Success:', values);
@@ -249,13 +249,17 @@ const Detailpage = () => {
 			<div className={'detail-container'}>
 				<Row>
 					<Col  sm={24}>
-						<div className={'product-details-tab'}>
-							<div className={'zoomWrapper single-zoom'}>
-								<a>
-									<Image  src={product?.img}/>
-								</a>
-							</div>
-						</div>
+						{
+							product?.map((it)=>(
+								<div className={'product-details-tab'}>
+									<div className={'zoomWrapper single-zoom'}>
+										<a>
+											<Image  src={it?.img}/>
+										</a>
+									</div>
+								</div>
+							))
+						}
 						<div className={'single-zoom-thumb'}>
 							<LeftOutlined onClick={()=>Carousell.current?.prev()} style={{cursor: 'pointer'}}/>
 							<RightOutlined onClick={()=>Carousell.current?.next()} style={{cursor: 'pointer'}}/>

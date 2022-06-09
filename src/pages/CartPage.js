@@ -1,7 +1,6 @@
 import React from 'react';
 import '../css/cart.css'
 import {Col, Row} from "antd";
-import {devices} from "../components/DealInDay";
 import {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 import products from "../__mock__/products";
@@ -26,8 +25,10 @@ const CartPage = () => {
 			if(!!exits){
 				exits.quantity += 1
 				update = localItems.map(el=>el.id === idItem ? el = exits : el)
+
 			} else {
 				update = [...localItems, newItem]
+				console.log(update)
 			}
 		}
 		else {
@@ -39,15 +40,20 @@ const CartPage = () => {
 		id = ''
 	}
 
-	const deLete = (idItem) =>{
-		console.log('xxxxxxx')
-		const deleteProduct = products.filter(x=>x.id === idItem);
-		localStorage.setItem('products', JSON.stringify(deleteProduct))
-		console.log(deleteProduct)
+	const Delete = () =>{
+		localStorage.setItem('products',JSON.stringify([]))
+		setItems([])
 	}
-	const addtoCart = () =>{
+	const AddCart = () =>{
 
 	}
+
+	const deleteItem = (id) => {
+		const itemsDeleted = items.filter(x=>x.id !== id)
+		localStorage.setItem('products',JSON.stringify(itemsDeleted))
+		setItems(itemsDeleted)
+	}
+
 
 	return (
 		<div>
@@ -76,8 +82,8 @@ const CartPage = () => {
 									<td><a><img src={el?.img} alt={''}/></a></td>
 									<td><a>{el?.name}</a></td>
 									<td>{el?.price}</td>
-									<td><input type={'number'} value={el.quantity}/></td>
-									<td><button style={{cursor: "pointer"}} onClick={()=>deLete()}>Xoá bỏ</button></td>
+									<td><input type={'number'} value={el.quantity} onChange={()=>setItems(el.target.value)}/></td>
+									<td><button onClick={()=>deleteItem(el.id)} style={{cursor: "pointer"}}>Xoá bỏ</button></td>
 								</tr>
 							))}
 							</tbody>
@@ -86,9 +92,12 @@ const CartPage = () => {
 					</div>
 				</Col>
 			</Row>
-			<div className="cart_submit">
-				<button type="submit" onClick={()=>addtoCart()}>Đặt hàng</button>
 
+			<div className="cart_submit">
+				<button type="submit" onClick={()=>Delete()}>Xoá tất cả</button>
+			</div>
+			<div className="cart_submit">
+				<button type="submit" onClick={()=>AddCart()}>Đặt hàng</button>
 			</div>
 		</div>
 	);
