@@ -1,11 +1,12 @@
 import React,{useRef} from 'react';
 import {Card, Carousel, Col, Row, Rate, Space} from "antd";
-
 import '../css/home.css'
 import {HeartOutlined, LeftOutlined, RightOutlined, SwapOutlined} from "@ant-design/icons";
+
 const Contacthome = () => {
 	const { Meta } = Card;
 	const carouselRe = useRef()
+
 	const contacthome =[
 		{
 			key:10,
@@ -72,8 +73,8 @@ const Contacthome = () => {
 			name: 'Laptop Asus Gaming',
 			sale: '$30.00',
 		},
-
 	]
+
 	const settings = {
 		slidesToShow: 4,
 		draggable: true,
@@ -104,6 +105,7 @@ const Contacthome = () => {
 			}
 		]
 	}
+
 	return (
 		<div>
 

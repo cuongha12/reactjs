@@ -3,9 +3,15 @@ import Routes from "./routes";
 import Main from "./components/Main";
 import "antd/dist/antd.css";
 import {useLocation} from "react-router-dom";
-import {useLayoutEffect} from "react";
+import React, {useLayoutEffect} from "react";
 
 function App() {
+	React.useEffect(() => {
+		window.process = {
+			...window.process,
+		};
+	}, []);
+
 	return (
 		<Main>
 			<Wrapper>

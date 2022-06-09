@@ -4,7 +4,7 @@ import {LeftOutlined, RightOutlined,HeartOutlined,SwapOutlined} from "@ant-desig
 import CountdownTimer from "./CountdownTimer";
 import {useNavigate} from "react-router-dom";
 import path from "../contants/path";
-
+import products from "../__mock__/products";
 
 const {Meta} = Card
 
@@ -46,9 +46,10 @@ const devices = [
 	},
 ]
 export {devices}
+
 const DealInDay = () => {
 
-	let navigates = useNavigate();
+	let navigate = useNavigate();
 	const carouselRef = useRef();
 
 	const THREE_DAYS_IN_MS = 5 * 24 * 60 * 60 * 1000;
@@ -87,8 +88,9 @@ const DealInDay = () => {
 		]
 	}
 
-	const onCart = () => {
-
+	const navigateToCart = (idItem) => {
+		navigate(path.CART + idItem)
+		// console.log(idItem)
 	}
 
 	return (
@@ -115,7 +117,7 @@ const DealInDay = () => {
 			<div className={'device'}>
 				<Carousel {...settings} ref={carouselRef} className={'caro'}>
 					{
-						devices.map((it)=>(
+						products.filter(x=>x.created_date.getDay() === new Date().getDay()).map((it)=>(
 							<Card
 								key={it.id}
 								hoverable
@@ -128,22 +130,18 @@ const DealInDay = () => {
 									<img alt="example" src={it.img}
 										 onClick={(event)=>{
 											 event.preventDefault()
-											 navigates(path.PRODUCT + it.id);
+											 navigate(path.PRODUCT + it.id);
 										 }}
 									/>
 									<button className={'btn-deal'}>{'Chi tiết'}</button>
 									<ul className={'addto'}>
 										<li>
-
 												<button className={'troy'}
-														onClick={(item)=>{
-																item.preventDefault()
-																navigates(path.CART +it.id)
-																onCart(it.id)
+														onClick={(event)=>{
+																event.preventDefault()
+																navigateToCart(it.id)
 															}
-
 														}
-
 												>
 													{'Thêm vào giỏ hàng '}
 												</button>

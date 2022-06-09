@@ -135,7 +135,7 @@
 .single-zoom-thumb .anticon-left{
     position: absolute;
     cursor: pointer;
-    justify-content: start;
+    justify-content: flex-start;
     z-index: 9999;
     top: 50%;
     display: flex;

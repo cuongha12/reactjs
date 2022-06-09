@@ -23,6 +23,7 @@ const MenuHeader = ({
 					<li><CsLink to={path.SHOP}>Cửa hàng</CsLink></li>
 					<li><CsLink to={path.BLOG}>Blog</CsLink></li>
 					<li><CsLink to={path.CONTACT}>Liên hệ</CsLink></li>
+					<li><CsLink to={path.ITEM}>Giỏ hàng</CsLink></li>
 				</ul>
 				<button onClick={onMenuClick} className={'logo-icon'}><MenuOutlined /></button>
 			</Col>

@@ -40,3 +40,27 @@
     color: #2e6ed5;
 
 }
+.cart_submit {
+    text-align: right;
+    padding: 12px;
+}
+.cart_submit button {
+    background: #363f4d;
+    border: 0;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    height: 38px;
+    line-height: 18px;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    border-radius: 3px;
+
+}
+.cart_submit button:hover {
+    background: #2e6ed5;
+}
