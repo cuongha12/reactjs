@@ -51,7 +51,7 @@ const Shopitem = [
 		id:1,
 		img:'https://htmldemo.net/rusu/rusu/assets/img/product/product1.jpg',
 		name:'ROG Swift PG43UQ',
-		price:'$69.00',
+		price:'69.00',
 		sale:'$50.00',
 
 	},

@@ -1,5 +1,5 @@
 import React from 'react';
-import products from "../__mock__/products";
+
 const Shoppingpage = () => {
 
 	return (
