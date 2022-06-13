@@ -50,6 +50,7 @@ const {Meta} = Card
 const DealInDay = () => {
 
 	let navigate = useNavigate();
+
 	const carouselRef = useRef();
 
 	const THREE_DAYS_IN_MS = 5 * 24 * 60 * 60 * 1000;
@@ -92,9 +93,7 @@ const DealInDay = () => {
 		navigate(path.CART + idItem)
 		// console.log(idItem)
 	}
-	const navigateToProduct = (idItem) => {
-	  	navigate(path.PRODUCT + idItem)
-	}
+
 
 	return (
 		<div className={'wrapper'}>
@@ -127,13 +126,13 @@ const DealInDay = () => {
 								cover={
 
 								<div>
-									<a href={'/#'}>{it.name}</a>
+									<a href={'/#'}>{it?.name}</a>
 									<Rate/>
 									<span className={'sale'}>SALE</span>
-									<img alt="example" src={it.img}
+									<img alt="example" src={it?.img}
 										 onClick={(event)=>{
 											 event.preventDefault()
-											 navigateToProduct( it.id);
+											 navigate(path.PRODUCT + it.id);
 										 }}
 									/>
 									<button className={'btn-deal'}>{'Chi tiết'}</button>
@@ -157,8 +156,8 @@ const DealInDay = () => {
 
 								}>
 								<Space>
-									<Meta title={it.sale}  className={'sale-price'}/>
-									<Meta title={it.price} className={'ol-price'}/>
+									<Meta title={it?.sale}  className={'sale-price'}/>
+									<Meta title={it?.price} className={'ol-price'}/>
 								</Space>
 								<CountdownTimer targetDate={dateTimeAfterThreeDays}/>
 							</Card>

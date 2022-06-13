@@ -5,7 +5,7 @@ import {Card} from "antd";
 import '../css/detail.css'
 import { Rate } from 'antd';
 import { Divider } from 'antd';
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import products from "../__mock__/products";
 import {HeartOutlined, LeftOutlined, RightOutlined, SwapOutlined} from '@ant-design/icons';
 import { Image } from 'antd';
@@ -13,7 +13,7 @@ import { Tabs } from 'antd';
 import Times from "../components/Times";
 import { Comment, Form, List, Input } from 'antd';
 import {  Button } from 'antd';
-
+import path from '../contants/path'
 
 const {Meta} = Card
 const { TextArea } = Input;
@@ -219,21 +219,20 @@ const Detailpage = () => {
 	const THREE_DAYS_IN_MS = 5 * 24 * 60 * 60 * 1000;
 	const NOW_IN_MS = new Date().getTime();
 	const dateTimeAfterThreeDays = NOW_IN_MS + THREE_DAYS_IN_MS;
-	const {id} = useParams();
-
+	let {id} = useParams();
 	const Carousell = useRef();
 	const [product, setProduct] = useState([]);
 
-
-	useEffect((idItem)=>{
+	let navigate = useNavigate();
+	useEffect(()=>{
 		//Tìm kiếm key same id -> sản phẩm
-		const newItem = products.find((x) => x.id === idItem)
-		setProduct(newItem)
-
-
+		const newProduct = products.find(e=>e.id === id)
+		setProduct(newProduct)
 	},[id])
 
-
+	const navigateItem = () =>{
+		navigate(path.CART + product.id)
+	}
 
 	const onFinish = (values) => {
 		console.log('Success:', values);
@@ -293,8 +292,10 @@ const Detailpage = () => {
 								<span className="old_price">{product?.sale}</span>
 							</div>
 							<div className="product_desc">
-								<p>eget velit. Donec ac tempus ante. Fusce ultricies massa massa. Fusce aliquam, purus eget
-									sagittis vulputate, sapien libero hendrerit est, sed commodo augue nisi non neque. Lorem
+								<p>eget velit. Donec ac tempus ante. Fusce ultricies massa massa.
+									Fusce aliquam, purus eget
+									sagittis vulputate, sapien libero hendrerit est, sed commodo augue nisi non neque.
+									Lorem
 									ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor, lorem et placerat
 									vestibulum, metus nisi posuere nisl, in </p>
 							</div>
@@ -314,7 +315,12 @@ const Detailpage = () => {
 							<div className="product_variant quantity">
 								<label>Số lượng</label>
 								<input min={1} max={100} defaultValue={1} type={'number'}/>
-								<button className={'detail-btn'} type={'submit'}>Thêm vào giỏ hàng</button>
+								<button className={'detail-btn'} type={'submit'}
+									onClick={(event)=>{
+										event.preventDefault()
+										navigateItem(product.id)
+									}}
+								>Thêm vào giỏ hàng</button>
 							</div>
 							<Times targetDate={dateTimeAfterThreeDays}/>
 							<div className=" product_d_action">
@@ -477,7 +483,9 @@ const Detailpage = () => {
 											<img alt="example" src={it.img} />
 											<button className={'btn-deal'}>{'Chi tiết'}</button>
 											<ul className={'addto'}>
-												<li><button className={'troy'}>{'Thêm vào giỏ hàng '}</button></li>
+												<li><button className={'troy'}
+
+												>{'Thêm vào giỏ hàng '}</button></li>
 												<li><button className={'tym'}><HeartOutlined /></button></li>
 												<li><button className={'upto'}><SwapOutlined /></button></li>
 											</ul>

@@ -7,7 +7,8 @@ const path = {
 	DETAIL : '/product/:id',
 	CART: '/cart/',
 	SHOPPING:'/cart/:id',
-	ITEM:'/item/'
+	ITEM:'/item/',
+	ODER:'/item/:id',
 }
 
 export default path
