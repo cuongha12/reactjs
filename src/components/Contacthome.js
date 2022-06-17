@@ -113,6 +113,8 @@ const Contacthome = () => {
 	const navigateCart = (idItem) => {
 		navigate(path.CART + idItem)
 	}
+
+
 	return (
 		<div>
 
@@ -148,9 +150,10 @@ const Contacthome = () => {
 			<Carousel ref={carouselRe} slidesToShow={4}  className={'caro'} draggable={true} {...settings} >
 
 				{
-					products?.filter(el=>el.created_date.getDate() === new Date(2021, 1, 23).getDate()).map((it)=>(
+					products?.filter(el=>el.created_date.getDate() === new Date(2021, 1, 23).
+					getDate()).map((it,index)=>(
 						<Card
-							key={it.id}
+							key={index}
 							hoverable
 							cover={
 								<div>
@@ -188,13 +191,11 @@ const Contacthome = () => {
 			<div className={'product-laptop'}>
 				<Row>
 					{
-						products?.filter(e=>e.created_date.getDay()=== new Date(2021, 4, 23).getDay()).
-						map((y)=>(
-							<Col key={y.id}   className={'parcel'} lg={6} xs={24} md={12}>
+						products?.filter(e=>e.created_date.getDate() === new Date(2025, 4, 25).
+						getDate()).map((y,index)=>(
+							<Col key={index}   className={'parcel'} lg={6} xs={24} md={12}>
 								<Card
-
 									hoverable
-
 									cover={
 										<div>
 											<a href={'/#'}>{y.name}</a>
@@ -207,7 +208,8 @@ const Contacthome = () => {
 												 }}/>
 											<button className={'btn-deal'}>{'Chi tiết'}</button>
 											<ul className={'addto'}>
-												<li><button className={'troy'} onClick={(event)=>{
+												<li><button className={'troy'}
+															onClick={(event)=>{
 													event.preventDefault()
 													navigateCart(y.id)
 												}

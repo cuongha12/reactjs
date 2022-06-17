@@ -2,8 +2,10 @@ import React from 'react';
 import '../css/cart.css'
 import {Col, Row} from "antd";
 import {useEffect, useState} from 'react';
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import products from "../__mock__/products";
+import path from "../contants/path";
+
 
 const CartPage = () => {
 	let {id} = useParams();
@@ -71,7 +73,10 @@ const CartPage = () => {
 		localStorage.setItem('products',JSON.stringify(updateProducts))
 		setItems(updateProducts)
 	}
-
+	const oderBill = () => {
+		navigate(path.ITEM )
+	}
+	let navigate = useNavigate()
 	return (
 		<div>
 			<div className={'content'}>
@@ -102,14 +107,14 @@ const CartPage = () => {
 									<td>
 										<button
 											style={{cursor: "pointer"}}
-											onClick={()=>onChangeQuantity(el.id, 'plus',el.price)}>
-											+
+											onClick={()=>onChangeQuantity(el.id, 'minus',el.price)}>
+											-
 										</button>
 										<button style={{cursor: "unset"}}>{el.quantity}</button>
 										<button
 											style={{cursor: "pointer"}}
-											onClick={()=>onChangeQuantity(el.id, 'minus',el.price)}>
-										-</button>
+											onClick={()=>onChangeQuantity(el.id, 'plus',el.price)}>
+										+</button>
 									</td>
 									<td><button onClick={()=>deleteItem(el.id)} style={{cursor: "pointer"}}>Xoá bỏ
 									</button></td>
@@ -156,9 +161,13 @@ const CartPage = () => {
 						</div>
 
 					</div>
-					<div className="cart_submit">
-						<button type="submit" >Thanh toán</button>
-					</div>
+
+							<div className="cart_submit">
+								<button type="submit" onClick={()=>
+
+									oderBill()}>Thanh toán</button>
+							</div>
+
 				</div>
 			</div>
 			<div className="cart_submit">

@@ -28,7 +28,7 @@ const Banner = ({
 			}} className={animate?'content-animation':''}>
 				<p>{content}</p>
 			</div>
-			<button className={`btn-now ${animate&&('btn-animation')}`}>
+			<button className={`btn-now ${animate&&('btn-animation')}`} >
 				{btnText}
 			</button>
 		</div>

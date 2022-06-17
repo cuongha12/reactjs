@@ -138,8 +138,8 @@ const Contactitem = () => {
 					{/*	))*/}
 					{/*}*/}
 					{
-						products?.filter(e=>e.created_date.getDay()=== new Date
-						(2022, 1, 20).getDay()).
+						products?.filter(e=>e.created_date.getDate()=== new Date
+						(2022, 1, 20).getDate()).
 						map((e)=>(
 							<Col key={e.id}   md={8} xs={24}>
 								<Card

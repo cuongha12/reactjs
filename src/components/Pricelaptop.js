@@ -142,15 +142,15 @@ const Pricelaptop = () => {
 			<div className={'device col'}>
 				<Carousel {...settings} ref={carousel} className={'caro'}>
 					{
-						products?.filter(x=>x.created_date.getDay()=== new Date(2022, 6, 24).getDay())
-							.map((el)=>(
+						products?.filter(x=>x.created_date.getDate()=== new Date(2022, 6, 24).getDate())
+							.map((el,index)=>(
 								<Card
 									onClick={(event)=>{
 										event.preventDefault()
 										navigate(path.PRODUCT + el.id);
 									}}
 									className={'sale-laptop'}
-									key={el.id}
+									key={index}
 									hoverable
 									cover={
 										<div>
