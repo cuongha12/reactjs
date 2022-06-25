@@ -114,7 +114,8 @@ const Contacthome = () => {
 		navigate(path.CART + idItem)
 	}
 
-
+	console.log(products?.filter(e=>e.created_date.getDate() === new Date(2025, 10, 17).
+	getDate()))
 	return (
 		<div>
 
@@ -191,7 +192,7 @@ const Contacthome = () => {
 			<div className={'product-laptop'}>
 				<Row>
 					{
-						products?.filter(e=>e.created_date.getDate() === new Date(2025, 4, 25).
+						products?.filter(e=>e.created_date.getDate() === new Date(2025, 10, 17).
 						getDate()).map((y,index)=>(
 							<Col key={index}   className={'parcel'} lg={6} xs={24} md={12}>
 								<Card

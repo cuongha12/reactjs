@@ -142,7 +142,7 @@ const products = [
 		price: '30.00',
 		name: 'Asus Tuf Gaming',
 		sale: '50.00',
-		created_date: new Date(2024, 4, 25)
+		created_date: new Date(2025, 10, 17)
 	},
 	{
 		id:uuid(),
@@ -150,7 +150,7 @@ const products = [
 		price: '40.00',
 		name: 'Camera 1200',
 		sale: '20.00',
-		created_date: new Date(2025, 4, 25)
+		created_date: new Date(2025, 10, 17)
 	},
 	{
 		id:uuid(),
@@ -158,7 +158,7 @@ const products = [
 		price: '50.00',
 		name: 'Rog Strix',
 		sale: '90.00',
-		created_date: new Date(2025, 4, 25)
+		created_date: new Date(2025, 10, 17)
 	},
 	{
 		id:uuid(),
@@ -166,7 +166,7 @@ const products = [
 		price: '60.00',
 		name: 'Laptop Asus Gaming',
 		sale: '30.00',
-		created_date: new Date(2025, 4, 25)
+		created_date: new Date(2025, 10, 17)
 	},
 
 	{
