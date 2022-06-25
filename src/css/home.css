@@ -140,11 +140,9 @@ p, h1, h2, h3, h4, h5 {
     transition: 0.3s;
 }
 .icone:hover{
-    -moz-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
+
     transform: scaleX(-1);
-    filter: FlipH;
+
     -ms-filter: "FlipH";
     transition: 0.5s;
 }
@@ -781,6 +779,8 @@ p, h1, h2, h3, h4, h5 {
     background: rgba(255, 255, 255, 0.95);
     border: 1px solid #ebebeb;
     opacity: 0.8;
+
+
 }
 
 .AnyClassForContainer {
