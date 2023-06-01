@@ -95,23 +95,23 @@ const products = [
 			name: 'Camera 1200',
 			sale: '30.00',
 			created_date: new Date(2021, 1, 23)
-		},
-		{
+	},
+	{
 			id:uuid(),
 			img:'https://htmldemo.net/rusu/rusu/assets/img/product/product4.jpg',
 			price:'70.00',
 			name: 'Laptopgaming',
 			sale: '20.00',
 			created_date: new Date(2021, 1, 23)
-		},
-		{
+	},
+	{
 			id:uuid(),
 			img:'https://htmldemo.net/rusu/rusu/assets/img/product/product5.jpg',
 			price:'79.00',
 			name: 'Asus Tuf gaming',
 			sale: '50.00',
 			created_date: new Date(2021, 1, 23)
-		},
+	},
 	{
 		id: uuid(),
 		img:'https://htmldemo.net/rusu/rusu/assets/img/product/product3.jpg',
